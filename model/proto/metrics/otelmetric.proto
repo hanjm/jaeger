@@ -16,12 +16,12 @@
 
 syntax="proto3";
 
-package jaeger.api_v2;
+package jaeger.api_v2.metrics;
 
 import "gogoproto/gogo.proto";
 
-option go_package = "api_v2";
-option java_package = "io.jaegertracing.api_v2";
+option go_package = "metrics";
+option java_package = "io.jaegertracing.api_v2.metrics";
 
 // Enable gogoprotobuf extensions (https://github.com/gogo/protobuf/blob/master/extensions.md).
 // Enable custom Marshal method.
@@ -113,7 +113,7 @@ message Metric {
   // https://github.com/open-telemetry/opentelemetry-specification/issues/617
 
   // Data determines the aggregation type (if any) of the metric, what is the
-  // reported value type for the data points, as well as the relatationship to
+  // reported value type for the data points, as well as the relationship to
   // the time interval over which they are reported.
   oneof data {
     // IntGauge and IntSum are deprecated and will be removed soon.
